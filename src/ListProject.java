@@ -4,22 +4,49 @@ public class ListProject {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int listSize = 10000000;
+		int listSize = 500000;		
+		StopWatch s = new StopWatch();
+		
+		
 		
 		System.out.println("Creating new list...");
-		List<Integer> list = new List<Integer>(listSize);
+		List<Integer> list = new List<Integer>();
+			
+		for(int i = listSize - 1; i >= 0; i--){
+			list.add(i);
+		}
 		
-		System.out.println("Current capacity of list: " + list.ensureCapacity(0));
+		
+		System.out.println("List sort status: " + list.isSorted());
+		System.out.print("Sorting the list...");
+		s.Start();
+		list.sort();
+		s.End();
+		System.out.println("Sorted.");		
+		System.out.println("Time: " + s.getTime());
+		System.out.println("List sort status: " + list.isSorted());
+		
+		
+		
+		list = new List<Integer>();
 		
 		for(int i = listSize - 1; i >= 0; i--){
 			list.add(i);
 		}
 		
-		System.out.println("Current elements in list: " + list.size());
+		
+		s.reset();
+		System.out.println("List sort status: " + list.isSorted());
+		System.out.print("Sorting the list...");
+		s.Start();
+		list.slowsort();
+		s.End();
+		System.out.println("Sorted.");		
+		System.out.println("Time: " + s.getTime());
+		System.out.println("List sort status: " + list.isSorted());
 		
 		
-		System.out.println("Sorting the list...");
-		list.sort();
+		
 		
 		System.out.println("End of program.");
 	

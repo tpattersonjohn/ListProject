@@ -67,8 +67,41 @@ public class List<T extends Comparable<T>> {
 			throw new IndexOutOfBoundsException();
 	}
 
-	@SuppressWarnings("unchecked")
+	
 	public void sort(){
+		
+		this.quickSort(0, size-1);
+			
+	}
+	
+	public void slowsort(){
+		
+		this.bubbleSort();
+		
+	}
+	
+	@SuppressWarnings("unchecked")
+	public boolean isSorted(){
+		
+		if(size < 2){
+			return true;
+		}
+		
+		for(int i = 0; i < size - 1; i++)
+		{
+			T e1 = (T) this.elementData[i];
+			T e2 = (T) this.elementData[i+1];
+			if(e1.compareTo(e2) > 0){
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	private void bubbleSort(){
 		
 		boolean didSort = true;
 		
@@ -90,13 +123,57 @@ public class List<T extends Comparable<T>> {
 			
 		}
 		
-				
 	}
 	
 	
-	public void printArrayHelper(Object[] a){
-		for(int i = 0; i<a.length; i++){
-			System.out.println("[" + i + "]:" + a[i]);
+	@SuppressWarnings("unchecked")
+	private void quickSort(int low, int high){
+		
+		int i = low;
+		int j = high;
+		
+		T pivot = (T) this.elementData[low + (high-low)/2];
+		
+		while(i <= j){
+			
+			T iNum = (T) this.elementData[i];
+			T jNum = (T) this.elementData[j];
+			
+			while (iNum.compareTo(pivot) < 0){
+				i++;
+				iNum = (T) this.elementData[i];
+			}
+			
+			while (jNum.compareTo(pivot) > 0){
+				j--;
+				jNum = (T) this.elementData[j];
+			}
+			
+			if(i<= j){
+				T temp = (T) this.elementData[i];
+				this.elementData[i] = this.elementData[j];
+				this.elementData[j] = temp;
+				i++;
+				j--;
+			}
+		}
+		
+		if(low < j){
+			quickSort(low, j);
+		}
+		if(i < high){
+			quickSort(i, high);
+		}		
+		
+		
+	}
+	
+	
+	
+	
+	public void printArrayHelper(){
+		for(int i = 0; i<size; i++){
+			System.out.println("[" + i + "]:" + elementData[i]);
 		}
 	}
 	
