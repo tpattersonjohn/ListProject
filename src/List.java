@@ -103,27 +103,36 @@ public class List<T extends Comparable<T>> {
 	@SuppressWarnings("unchecked")
 	private void bubbleSort(){
 		
-		boolean didSort = true;
-		
-		while(didSort){
-			didSort = false;
-			for(int i = 0; i < this.size - 1; i++){
+		if(size < 2){
+			return;
+		}	
+
+
+		for(int i = 0; i < size; i++){
+			
+			int minI = i;
+			T minE = (T) this.elementData[minI];
+			
+			
+			for(int j = i; j < size; j++){
+
+				T curE = (T) this.elementData[j];
 				
-				T e1 = (T) this.elementData[i];
-				T e2 = (T) this.elementData[i+1];
-				
-				if(e1.compareTo(e2) > 0){
-					T temp = e1; 
-					elementData[i] = elementData[i+1];
-					elementData[i+1] = temp;
-					didSort = true;
+				if(curE.compareTo(minE) < 0){
+					minE = curE;
+					minI = j;				
 				}
 				
 			}
 			
+			T temp = (T) this.elementData[minI];
+			this.elementData[minI] = this.elementData[i];
+			this.elementData[i] = temp;
+			
 		}
-		
-	}
+
+	}	
+
 	
 	
 	@SuppressWarnings("unchecked")

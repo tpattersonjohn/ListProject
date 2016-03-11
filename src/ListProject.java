@@ -4,7 +4,7 @@ public class ListProject {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int listSize = 500000;		
+		int listSize = 200000;		
 		StopWatch s = new StopWatch();
 		
 		
@@ -16,14 +16,14 @@ public class ListProject {
 			list.add(i);
 		}
 		
-		
+		System.out.println("-----------TEST1: FAST------------");
 		System.out.println("List sort status: " + list.isSorted());
 		System.out.print("Sorting the list...");
 		s.Start();
 		list.sort();
 		s.End();
 		System.out.println("Sorted.");		
-		System.out.println("Time: " + s.getTime());
+		System.out.println("Time: " + s.getTimeInMicroSec());
 		System.out.println("List sort status: " + list.isSorted());
 		
 		
@@ -34,6 +34,7 @@ public class ListProject {
 			list.add(i);
 		}
 		
+		System.out.println("-----------TEST2: SLOW------------");
 		
 		s.reset();
 		System.out.println("List sort status: " + list.isSorted());
@@ -42,7 +43,7 @@ public class ListProject {
 		list.slowsort();
 		s.End();
 		System.out.println("Sorted.");		
-		System.out.println("Time: " + s.getTime());
+		System.out.println("Time: " + s.getTimeInMicroSec());
 		System.out.println("List sort status: " + list.isSorted());
 		
 		
