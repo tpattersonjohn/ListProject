@@ -26,8 +26,7 @@ public class ListProject {
 		System.out.println("Time: " + s.getTimeInMicroSec());
 		System.out.println("List sort status: " + list.isSorted());
 		
-		
-		
+
 		list = new List<Integer>();
 		
 		for(int i = listSize - 1; i >= 0; i--){
