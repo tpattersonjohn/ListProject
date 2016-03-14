@@ -8,6 +8,7 @@
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
+    <pluginManagement>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.3</version>
@@ -37,7 +38,7 @@
         </execution>
       </executions>
     </plugin>
-      
+    </pluginManagement>  
     </plugins>
   </build>
   <dependencies>
