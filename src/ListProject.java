@@ -4,7 +4,8 @@ public class ListProject {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int listSize = 200000;		
+		
+		int listSize = 100000;		
 		StopWatch s = new StopWatch();
 		
 		
