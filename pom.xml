@@ -35,7 +35,7 @@
 						<index>true</index>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>MainClass</mainClass>
+							<mainClass>main.java.MainClass</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
