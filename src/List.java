@@ -12,6 +12,9 @@ public class List<T extends Comparable<T>> {
 	}
 	
 	public List(int initialCapacity){
+		if(initialCapacity < 1){
+			throw new IndexOutOfBoundsException("Initial capacity must be greater than 0");
+		}
 		this.size = 0;
 		this.elementData = new Object[initialCapacity];
 	}
@@ -37,6 +40,10 @@ public class List<T extends Comparable<T>> {
 		
 		return elementData.length;
 				
+	}
+	
+	public int capacity(){
+		return elementData.length;
 	}
 	
 	public boolean add(T t){
