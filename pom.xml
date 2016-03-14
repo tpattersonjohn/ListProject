@@ -3,12 +3,8 @@
   <groupId>ListProject</groupId>
   <artifactId>ListProject</artifactId>
   <packaging>jar</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
 
-  <properties>
-    <maven.compiler.source>7</maven.compiler.source>
-    <maven.compiler.target>7</maven.compiler.target>
-  </properties>
 
   <dependencies>
     <dependency>
