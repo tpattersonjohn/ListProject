@@ -1,6 +1,6 @@
 package main.java;
 
-public class MainClass {
+public class ListProject {
 
 	public static void main(String[] args) {
 
@@ -19,7 +19,7 @@ public class MainClass {
 		System.out.print("Sorting the list...");
 		s.Start();
 		list.sort();
-		s.End();
+		s.Stop();
 
 		System.out.println("Sorted.");
 		System.out.println("Time: " + s.getTimeInMicroSec());
@@ -38,7 +38,7 @@ public class MainClass {
 		System.out.print("Sorting the list...");
 		s.Start();
 		list.slowsort();
-		s.End();
+		s.Stop();
 		System.out.println("Sorted.");
 		System.out.println("Time: " + s.getTimeInMicroSec());
 		System.out.println("List sort status: " + list.isSorted());

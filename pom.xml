@@ -35,7 +35,7 @@
 						<index>true</index>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>com.jopatter.MainClass</mainClass>
+							<mainClass>com.jopatter.ListProject</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
