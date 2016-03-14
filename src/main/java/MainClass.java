@@ -1,10 +1,10 @@
 package main.java;
 
-public class ListProject {
+public class MainClass {
 
 	public static void main(String[] args) {
 
-		int listSize = 100000;
+		int listSize = 10000;
 		StopWatch s = new StopWatch();
 
 		System.out.println("Creating new list...");
