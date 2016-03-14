@@ -6,7 +6,7 @@
 	<groupId>com.ListProject</groupId>
 	<artifactId>ListProject</artifactId>
 	<version>0.0.1</version>
-	<name>SortedList App</name>
+	<name>SortedListApplication</name>
 	<packaging>jar</packaging>
 
 
