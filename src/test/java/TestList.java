@@ -57,4 +57,22 @@ public class TestList {
 
 	}
 
+	@Test
+	public void testSlowSort() {
+		List<Integer> testList = new List<Integer>();
+		for (int i = 0; i < 100; i++) {
+			testList.add(i);
+		}
+		assertEquals(testList.isSorted(), true);
+
+		testList = new List<Integer>();
+		for (int i = 99; i >= 0; i--) {
+			testList.add(i);
+		}
+		assertEquals(testList.isSorted(), false);
+		testList.slowsort();
+		assertEquals(testList.isSorted(), true);
+
+	}
+
 }
