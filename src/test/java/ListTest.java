@@ -1,10 +1,7 @@
-package test.java;
-
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-
-import main.java.List;
 
 //import junit.framework.Assert;
 
@@ -72,6 +69,25 @@ public class ListTest {
 		assertEquals(testList.isSorted(), false);
 		testList.slowsort();
 		assertEquals(testList.isSorted(), true);
+
+	}
+
+	@Test
+	public void testGet() {
+
+		List<Integer> testList = new List<Integer>();
+		testList.add(1);
+
+		int n = testList.get(0);
+
+		assertEquals(n, 1);
+
+		try {
+			testList.get(1);
+			assertTrue(false);
+		} catch (Exception e) {
+			assertTrue(true);
+		}
 
 	}
 

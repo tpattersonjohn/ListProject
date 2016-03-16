@@ -1,5 +1,3 @@
-package main.java;
-
 public class ListProject {
 
 	public static void main(String[] args) {

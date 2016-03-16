@@ -1,11 +1,7 @@
-package test.java;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-
-import main.java.StopWatch;
 
 public class StopWatchTest {
 
@@ -14,7 +10,7 @@ public class StopWatchTest {
 		StopWatch s = new StopWatch();
 		s.Start();
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(100);
 		} catch (InterruptedException ex) {
 			Thread.currentThread().interrupt();
 		}
@@ -29,7 +25,7 @@ public class StopWatchTest {
 		StopWatch s = new StopWatch();
 		s.Start();
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(100);
 		} catch (InterruptedException ex) {
 			Thread.currentThread().interrupt();
 		}
@@ -48,7 +44,7 @@ public class StopWatchTest {
 		StopWatch s = new StopWatch();
 		s.Start();
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(100);
 		} catch (InterruptedException ex) {
 			Thread.currentThread().interrupt();
 		}
