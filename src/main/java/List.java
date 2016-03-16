@@ -10,11 +10,12 @@ public class List<T extends Comparable<T>> {
 	}
 
 	public List(int initialCapacity) {
-		if (initialCapacity < 1) {
-			throw new IndexOutOfBoundsException("Initial capacity must be greater than 0");
-		}
+
 		this.size = 0;
-		this.elementData = new Object[initialCapacity];
+
+		// capacity will always be at least 1
+		int capacity = Math.max(1, initialCapacity);
+		this.elementData = new Object[Math.max(1, capacity)];
 	}
 
 	// returns the new capacity of the array
@@ -103,10 +104,6 @@ public class List<T extends Comparable<T>> {
 	@SuppressWarnings("unchecked")
 	private void bubbleSort() {
 
-		if (size < 2) {
-			return;
-		}
-
 		for (int i = 0; i < size; i++) {
 
 			int minI = i;
@@ -172,10 +169,20 @@ public class List<T extends Comparable<T>> {
 
 	}
 
-	public void printArrayHelper() {
-		for (int i = 0; i < size; i++) {
-			System.out.println("[" + i + "]:" + elementData[i]);
+	@Override
+	public String toString() {
+
+		StringBuilder result = new StringBuilder();
+		String NEW_LINE = System.getProperty("line.separator");
+
+		for (int i = 0; i < size(); i++) {
+			result.append(elementData[i].toString());
+			if (i < size - 1) {
+				result.append(NEW_LINE);
+			}
 		}
+
+		return result.toString();
 	}
 
 }

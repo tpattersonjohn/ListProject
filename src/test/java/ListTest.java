@@ -36,6 +36,17 @@ public class ListTest {
 	}
 
 	@Test
+	public void isEmpty() {
+		List<Integer> testList = new List<Integer>();
+
+		assertTrue(testList.isEmpty());
+
+		testList.add(1);
+
+		assertTrue(!testList.isEmpty());
+	}
+
+	@Test
 	public void testSort() {
 
 		List<Integer> testList = new List<Integer>();
@@ -70,6 +81,14 @@ public class ListTest {
 		testList.slowsort();
 		assertEquals(testList.isSorted(), true);
 
+		// Try with size of 1
+		testList = new List<Integer>();
+		testList.add(1);
+		testList.slowsort();
+		assertTrue(testList.isSorted());
+		int n = testList.get(0);
+		assertEquals(n, 1);
+
 	}
 
 	@Test
@@ -89,6 +108,40 @@ public class ListTest {
 			assertTrue(true);
 		}
 
+	}
+
+	public int getLinesInString(String s) {
+		String NEW_LINE = System.getProperty("line.separator");
+		return s.split(NEW_LINE).length;
+	}
+
+	@Test
+	public void testToString() {
+		List<Integer> testList = new List<Integer>();
+
+		testList.add(1);
+		String s = testList.toString();
+
+		assertTrue(getLinesInString(s) == 1);
+
+		testList.add(2);
+		s = testList.toString();
+
+		assertTrue(getLinesInString(s) == 2);
+	}
+
+	@Test
+	public void testIsSorted() {
+		List<Integer> testList = new List<Integer>();
+		testList.add(0);
+
+		assertTrue(testList.isSorted());
+
+		testList.add(1);
+		assertTrue(testList.isSorted());
+
+		testList.add(-1);
+		assertTrue(!testList.isSorted());
 	}
 
 }
