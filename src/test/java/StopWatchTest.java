@@ -13,11 +13,11 @@ public class StopWatchTest {
 	public void testGetTime() {
 		StopWatch s = new StopWatch();
 		s.Start();
-
-		for (int i = 0; i < 10000; i++) {
-			int j = 0;
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException ex) {
+			Thread.currentThread().interrupt();
 		}
-
 		s.Stop();
 
 		assertEquals(s.getTime() > 0, true);
@@ -28,11 +28,11 @@ public class StopWatchTest {
 	public void testReset() {
 		StopWatch s = new StopWatch();
 		s.Start();
-
-		for (int i = 0; i < 10000; i++) {
-			int j = 0;
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException ex) {
+			Thread.currentThread().interrupt();
 		}
-
 		s.Stop();
 
 		assertEquals(s.getTime() > 0, true);
@@ -53,8 +53,6 @@ public class StopWatchTest {
 			Thread.currentThread().interrupt();
 		}
 		s.Stop();
-
-		long time = s.getTime();
 
 		assertTrue(s.getTime() / 1000 == s.getTimeInMicroSec());
 		assertTrue(s.getTimeInMicroSec() / 1000 == s.getTimeInMilliSec());
