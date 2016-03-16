@@ -6,6 +6,8 @@ public class ListProject {
 
 		System.out.println("End of program.");
 
+		badbuildcommand
+		
 	}
 
 }
