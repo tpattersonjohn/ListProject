@@ -1,6 +1,7 @@
 package test.java;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -39,6 +40,26 @@ public class StopWatchTest {
 		s.reset();
 
 		assertEquals(s.getTime() == 0, true);
+	}
+
+	@Test
+	public void testTimeFormats() {
+
+		StopWatch s = new StopWatch();
+		s.Start();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException ex) {
+			Thread.currentThread().interrupt();
+		}
+		s.Stop();
+
+		long time = s.getTime();
+
+		assertTrue(s.getTime() / 1000 == s.getTimeInMicroSec());
+		assertTrue(s.getTimeInMicroSec() / 1000 == s.getTimeInMilliSec());
+		assertTrue(s.getTimeInMilliSec() / 1000 == s.getTimeInSec());
+
 	}
 
 }
