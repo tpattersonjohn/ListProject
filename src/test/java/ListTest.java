@@ -8,7 +8,7 @@ import main.java.List;
 
 //import junit.framework.Assert;
 
-public class TestList {
+public class ListTest {
 
 	@Test
 	public void testEnsureCapacity() {
